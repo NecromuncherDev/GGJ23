@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace GGJ.Core
 {
@@ -18,7 +19,20 @@ namespace GGJ.Core
 
         private void Start()
         {
+            if (CheckWinGame())
+            {
+                State.WinGame();
+                return;
+            }
+
+            if (CheckLoseGame())
+            {
+                State.LoseGame();
+                return;
+            }
+
             InitPlayerPosition();
+            UpdateNodeColors();
         }
 
         private void Update()
@@ -36,7 +50,9 @@ namespace GGJ.Core
                     return;
 
                 player.position = node.transform.position;
-                State.VisitLevel(levelIndex);
+                State.MarkVisited(levelIndex);
+
+                SceneManager.LoadScene("WinLoseTemp");
             }
         }
 
@@ -79,6 +95,50 @@ namespace GGJ.Core
             var level = layers[State.CurrentLevelIndex.LayerIndex];
             var node = level.nodes[State.CurrentLevelIndex.NodeIndex];
             player.position = node.transform.position;
+        }
+
+        private void UpdateNodeColors()
+        {
+            for (int layerIndex = 0; layerIndex < layers.Length; layerIndex++)
+            {
+                var layer = layers[layerIndex];
+                for (int nodeIndex = 0; nodeIndex < layer.nodes.Length; nodeIndex++)
+                {
+                    var node = layer.nodes[nodeIndex];
+                    var spriteRenderer = node.GetComponent<SpriteRenderer>();
+                    if (layerIndex != State.CurrentLayer)
+                    {
+                        spriteRenderer.color = Color.black;
+                        continue;
+                    }
+
+                    var levelIndex = new LevelIndex { LayerIndex = layerIndex, NodeIndex = nodeIndex };
+                    if (State.VisitedLevels.Contains(levelIndex))
+                    {
+                        spriteRenderer.color = Color.green;
+                    }
+                }
+            }
+        }
+
+        private bool CheckWinGame()
+        {
+            return State.CurrentLayer >= layers.Length;
+        }
+
+        private bool CheckLoseGame()
+        {
+            int visitedNodes = 0;
+            for (int nodeIndex = 0; nodeIndex < layers[State.CurrentLayer].nodes.Length; nodeIndex++)
+            {
+                var levelIndex = new LevelIndex { LayerIndex = State.CurrentLayer, NodeIndex = nodeIndex };
+                if (State.VisitedLevels.Contains(levelIndex))
+                {
+                    visitedNodes++;
+                }
+            }
+
+            return visitedNodes >= layers[State.CurrentLayer].nodes.Length;
         }
     }
 }
