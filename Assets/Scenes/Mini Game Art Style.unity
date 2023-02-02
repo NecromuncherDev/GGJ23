@@ -185,64 +185,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3174560189434927202, guid: 04e7b7d5ca279e540ac6baac761c3108,
-        type: 3}
-      propertyPath: m_RendererIndex
-      value: -1
-      objectReference: {fileID: 0}
     - target: {fileID: 3174560189434927260, guid: 04e7b7d5ca279e540ac6baac761c3108,
         type: 3}
       propertyPath: m_Name
       value: Mini Game Camera
       objectReference: {fileID: 0}
-    - target: {fileID: 3174560189434927263, guid: 04e7b7d5ca279e540ac6baac761c3108,
-        type: 3}
-      propertyPath: orthographic size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3174560189434927263, guid: 04e7b7d5ca279e540ac6baac761c3108,
-        type: 3}
-      propertyPath: m_NormalizedViewPortRect.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3174560189434927263, guid: 04e7b7d5ca279e540ac6baac761c3108,
-        type: 3}
-      propertyPath: m_NormalizedViewPortRect.y
-      value: 0.025925934
-      objectReference: {fileID: 0}
-    - target: {fileID: 3174560189434927263, guid: 04e7b7d5ca279e540ac6baac761c3108,
-        type: 3}
-      propertyPath: m_NormalizedViewPortRect.width
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3174560189434927263, guid: 04e7b7d5ca279e540ac6baac761c3108,
-        type: 3}
-      propertyPath: m_NormalizedViewPortRect.height
-      value: 0.94814813
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3174560189434927262, guid: 04e7b7d5ca279e540ac6baac761c3108, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04e7b7d5ca279e540ac6baac761c3108, type: 3}
---- !u!1 &2119902715 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3174560189434927260, guid: 04e7b7d5ca279e540ac6baac761c3108,
-    type: 3}
-  m_PrefabInstance: {fileID: 1233142896}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2119902723
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2119902715}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ca652c13353f448d9227970c0928082, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  referenceHeight: 256
-  pixelsPerUnit: 128
 --- !u!1001 &1493711397565105631
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -263,7 +212,7 @@ PrefabInstance:
     - target: {fileID: 1493711397476427250, guid: e325f4d235188ec4fa3f88ad40200ae4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.23
+      value: -0.281
       objectReference: {fileID: 0}
     - target: {fileID: 1493711397476427250, guid: e325f4d235188ec4fa3f88ad40200ae4,
         type: 3}
