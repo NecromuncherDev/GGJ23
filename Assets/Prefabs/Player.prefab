@@ -15,7 +15,8 @@ GameObject:
   - component: {fileID: 6082575806313374961}
   - component: {fileID: 1824045667}
   - component: {fileID: 4126803761986879358}
-  m_Layer: 13
+  - component: {fileID: 838423050}
+  m_Layer: 0
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -31,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 1208144871472054}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.14, y: 3.39, z: 1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 8, y: 8, z: 8}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5445242177033805608}
@@ -50,7 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 709ee11994a2f44658e5fc9887c45081, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minGroundNormalY: 0.9
+  minGroundNormalY: 0.4
   gravityModifier: 1
   velocity: {x: 0, y: 0}
   inner: {fileID: 9156559404545589847}
@@ -105,7 +106,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 0.7906767
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -207,18 +208,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.011505231, y: -0.057861913}
+  m_Offset: {x: -0.0027943328, y: -0.057861913}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.1328125, y: 0.140625}
-    newSize: {x: 1.28, y: 1.26}
+    oldSize: {x: 0.3515625, y: 0.3046875}
+    newSize: {x: 0.32, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.14044866, y: 0.10469196}
+  m_Size: {x: 0.15787046, y: 0.10469196}
   m_EdgeRadius: 0
 --- !u!58 &4126803761986879358
 CircleCollider2D:
@@ -233,9 +234,22 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.060091436}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.07716301
+--- !u!114 &838423050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1208144871472054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8534e17a0f90604c9afd4f5c73d829f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Id: 2cedde77-9eec-414f-a172-5c4b3c8e2891
 --- !u!1001 &6641466209428145516
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -297,6 +311,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Squirrel View
+      objectReference: {fileID: 0}
+    - target: {fileID: 3649865382014353256, guid: 17bce69c3fae4b7418a88930d592ff09,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3649865382014353256, guid: 17bce69c3fae4b7418a88930d592ff09,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -668528751
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 17bce69c3fae4b7418a88930d592ff09, type: 3}
