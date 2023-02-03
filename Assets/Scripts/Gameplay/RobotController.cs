@@ -4,7 +4,7 @@ using UnityEngine;
 using static Platformer.Core.Simulation;
 using Platformer.Gameplay;
 
-public class Robot : MonoBehaviour
+public class RobotController : MonoBehaviour
 {
     private Animator _animator;
     // Start is called before the first frame update
@@ -28,10 +28,17 @@ public class Robot : MonoBehaviour
 
     public void PlayAttack()
     {
-        _animator.SetTrigger("Attack 2");
-        StompController stompController = GetComponentInChildren<StompController>();
-        var toggle = Schedule<ToggleStompActive>(1.5f);
-        toggle.active = true;
-        toggle.stompController = stompController;
+        if (_animator) { 
+            Debug.Log("Playing animation");
+            _animator.SetTrigger("Attack 1");
+            StompController stompController = GetComponentInChildren<StompController>();
+            var toggle = Schedule<ToggleStompActive>(1.5f);
+            toggle.active = true;
+            toggle.stompController = stompController;
+        }
+        else
+        {
+            Debug.Log("No animator");
+        }
     }
 }
