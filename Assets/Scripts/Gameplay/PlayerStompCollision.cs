@@ -13,6 +13,9 @@ public class PlayerStompCollision : Simulation.Event<PlayerStompCollision>
     public override void Execute()
     {
         player.health.Decrement();
+        //Debug.Log($"Stomp collision, {(float)player.health.CurrentHP / (float)player.health.maxHP}, {player.health.CurrentHP} {player.health.maxHP}" );
+        if(model.uiLevel != null)
+            model.uiLevel.uiHealth.Health = (float)player.health.CurrentHP / (float)player.health.maxHP;
         //Schedule<PlayerDeath>();
     }
 }
