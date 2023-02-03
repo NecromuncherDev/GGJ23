@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public class StompController : MonoBehaviour
 {
-    float throttlingInterval = 1;
+    float throttlingInterval = 2;
     float lastCollision = 0;
     void OnTriggerEnter2D(Collider2D collider)
     {
@@ -13,7 +13,6 @@ public class StompController : MonoBehaviour
         if (player != null && Time.time - lastCollision > throttlingInterval)
         {
             lastCollision = Time.time;
-            Debug.Log("OnTriggerEnter2D- player");
             var ev = Schedule<PlayerStompCollision>();
             ev.player = player;
         }
