@@ -73,7 +73,7 @@ namespace Platformer.Mechanics
         protected virtual void OnEnable()
         {
             body = GetComponent<Rigidbody2D>();
-            Collider = GetComponent<CircleCollider2D>();   
+            Collider = GetComponent<CircleCollider2D>();
             body.isKinematic = true;
         }
 
@@ -129,7 +129,7 @@ namespace Platformer.Mechanics
         void PerformMovement(Vector2 move, bool yMovement)
         {
             var distance = move.magnitude;
-            
+
             if (distance > minMoveDistance)
             {
                 //check if we hit anything in current direction of travel
@@ -138,21 +138,11 @@ namespace Platformer.Mechanics
 
                 for (var i = 0; i < count; i++)
                 {
-                    var downNormal = hitBuffer[i].normal;
-                    if (downNormal.y >= 0)
-                    {
-                        downNormal = downNormal * -1;
-                    }
-
-                    Debug.DrawRay(body.position + downNormal * rayLength, downNormal *  0.1f, Color.red);
-                    var groundHit = Physics2D.Raycast(body.position + downNormal * rayLength, downNormal, 0.1f);
-
-//                    var groundHit = Physics2D.Raycast(Vector2.right * body.position.x + Vector2.up * Collider.bounds.min.y, Vector2.down, 0.1f);
-                    // Checks is the ground is bellow the player
-                    if (groundHit.collider != null && groundHit.point.y < hitBuffer[i].point.y)
+                    if (velocity.y > 0)
                     {
                         continue;
                     }
+
                     var currentNormal = hitBuffer[i].normal;
                     //is this surface flat enough to land on?
                     if (currentNormal.y > minGroundNormalY)
@@ -167,16 +157,9 @@ namespace Platformer.Mechanics
                     }
                     if (IsGrounded)
                     {
-                        
-                        if (groundHit.collider != null)
-                        {
-                            Debug.Log(groundHit.collider.transform.name);
-                        }
                         //how much of our velocity aligns with surface normal?
                         var projection = Vector2.Dot(velocity, currentNormal);
 
-                        Debug.DrawRay(transform.position, velocity, Color.yellow);
-                        Debug.DrawRay(transform.position, currentNormal, Color.blue );
                         if (projection < 0)
                         {
                             //slower velocity if moving against the normal (up a hill).
@@ -185,8 +168,6 @@ namespace Platformer.Mechanics
                     }
                     else
                     {
-                        
-
                         //We are airborne, but hit something, so cancel vertical up and horizontal velocity.
                         //velocity.x *= 0;
                         //velocity.y = Mathf.Min(velocity.y, 0);
