@@ -12,7 +12,8 @@ public class PlayerStompCollision : Simulation.Event<PlayerStompCollision>
 
     public override void Execute()
     {
-        Schedule<PlayerDeath>();
+        player.health.Decrement();
+        //Schedule<PlayerDeath>();
     }
 }
 
