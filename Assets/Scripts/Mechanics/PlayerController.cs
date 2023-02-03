@@ -14,6 +14,7 @@ namespace Platformer.Mechanics
     /// </summary>
     public class PlayerController : KinematicObject
     {
+        public GameObject inner;
         public AudioClip jumpAudio;
         public AudioClip respawnAudio;
         public AudioClip ouchAudio;
@@ -29,8 +30,10 @@ namespace Platformer.Mechanics
 
         public JumpState jumpState = JumpState.Grounded;
         private bool stopJump;
-        /*internal new*/ public Collider2D collider2d;
-        /*internal new*/ public AudioSource audioSource;
+        /*internal new*/
+        public Collider2D collider2d;
+        /*internal new*/
+        public AudioSource audioSource;
         public Health health;
         public bool controlEnabled = true;
 
@@ -38,6 +41,7 @@ namespace Platformer.Mechanics
         Vector2 move;
         SpriteRenderer spriteRenderer;
         internal Animator animator;
+        
         readonly PlatformerModel model = Simulation.GetModel<PlatformerModel>();
 
         public Bounds Bounds => collider2d.bounds;
@@ -47,8 +51,9 @@ namespace Platformer.Mechanics
             health = GetComponent<Health>();
             audioSource = GetComponent<AudioSource>();
             collider2d = GetComponent<Collider2D>();
-            spriteRenderer = GetComponent<SpriteRenderer>();
-            animator = GetComponent<Animator>();
+            spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+            animator = GetComponentInChildren<Animator>();
+            
         }
 
         protected override void Update()
@@ -68,10 +73,23 @@ namespace Platformer.Mechanics
             {
                 move.x = 0;
             }
+            UpdateSpriteAngle();
             UpdateJumpState();
             base.Update();
         }
 
+        void UpdateSpriteAngle()
+        {
+            var normal = groundNormal;
+            if(jumpState == JumpState.InFlight)
+            {
+                normal = Vector3.forward;
+            }
+
+            Debug.DrawRay(transform.position, groundNormal*5, Color.gray);
+            Debug.DrawRay(transform.position, Vector3.forward, Color.green);
+            inner.transform.rotation = Quaternion.LookRotation(Vector3.forward, normal);
+        }
         void UpdateJumpState()
         {
             jump = false;
@@ -125,7 +143,7 @@ namespace Platformer.Mechanics
 
             animator.SetBool("grounded", IsGrounded);
             animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
-
+            
             targetVelocity = move * maxSpeed;
         }
 
