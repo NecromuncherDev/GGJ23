@@ -10,12 +10,12 @@ namespace Platformer.Gameplay
 	public class RobotStomp : Simulation.Event<RobotStomp>
 	{
         PlatformerModel model = Simulation.GetModel<PlatformerModel>();
-        public Robot robot;
+        public RobotController robot;
         
         public override void Execute()
         {
             robot.PlayAttack();
-            var robotStomp = Schedule<RobotStomp>(5);
+            var robotStomp = Schedule<RobotStomp>(10);
             robotStomp.robot = robot;
         }
     }
