@@ -30,5 +30,9 @@ public class Robot : MonoBehaviour
     {
         Debug.Log("Playing animation");
         _animator.SetTrigger("Attack 2");
+        StompController stompController = GetComponentInChildren<StompController>();
+        var toggle = Schedule<ToggleStompActive>(1.5f);
+        toggle.active = true;
+        toggle.stompController = stompController;
     }
 }

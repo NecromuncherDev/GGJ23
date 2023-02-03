@@ -1,3 +1,4 @@
+using GGJ.Core;
 using Platformer.Core;
 using Platformer.Mechanics;
 using Platformer.Model;
@@ -17,8 +18,9 @@ namespace Platformer.Gameplay
 
         public override void Execute()
         {
-            model.player.animator.SetTrigger("victory");
-            model.player.controlEnabled = false;
+            State.WinLevel();
+            //model.player.animator.SetTrigger("victory");
+            //model.player.controlEnabled = false;
         }
     }
 }
