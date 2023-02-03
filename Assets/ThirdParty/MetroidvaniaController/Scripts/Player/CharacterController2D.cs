@@ -46,6 +46,10 @@ public class CharacterController2D : MonoBehaviour
 
     public UnityEvent OnFallEvent;
     public UnityEvent OnLandEvent;
+    public UnityEvent OnGroundEvent;
+
+    [HideInInspector]
+    public GameObject lastGround;
 
     [System.Serializable]
     public class BoolEvent : UnityEvent<bool> { }
@@ -60,6 +64,9 @@ public class CharacterController2D : MonoBehaviour
 
         if (OnLandEvent == null)
             OnLandEvent = new UnityEvent();
+
+        if (OnGroundEvent == null)
+            OnGroundEvent = new UnityEvent();
     }
 
 
@@ -82,7 +89,11 @@ public class CharacterController2D : MonoBehaviour
         for (int i = 0; i < colliders.Length; i++)
         {
             if (colliders[i].gameObject != gameObject)
+            {
+                lastGround = colliders[i].gameObject;
                 m_Grounded = true;
+                OnGroundEvent.Invoke();
+            }
             if (!wasGrounded)
             {
                 OnLandEvent.Invoke();
