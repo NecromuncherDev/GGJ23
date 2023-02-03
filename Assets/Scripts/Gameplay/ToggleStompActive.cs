@@ -12,7 +12,6 @@ public class ToggleStompActive : Simulation.Event<ToggleStompActive>
 
     public override void Execute()
     {
-        Debug.Log("Set active to:" + active);
         BoxCollider2D collider = stompController.gameObject.GetComponent<BoxCollider2D>();
         collider.enabled = active;
         if (active)
