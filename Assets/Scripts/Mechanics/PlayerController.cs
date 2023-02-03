@@ -105,6 +105,7 @@ namespace Platformer.Mechanics
             switch (jumpState)
             {
                 case JumpState.PrepareToJump:
+                    animator.SetBool("Jumping", true);
                     jumpState = JumpState.Jumping;
                     jump = true;
                     stopJump = false;
@@ -121,6 +122,7 @@ namespace Platformer.Mechanics
                     {
                         Schedule<PlayerLanded>().player = this;
                         jumpState = JumpState.Landed;
+                        animator.SetBool("Jumping", false);
                     }
                     break;
                 case JumpState.Landed:
