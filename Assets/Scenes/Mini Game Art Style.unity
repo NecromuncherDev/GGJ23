@@ -582,6 +582,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2119902725, guid: 04e7b7d5ca279e540ac6baac761c3108, type: 3}
+      propertyPath: m_RefResolutionX
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 2119902725, guid: 04e7b7d5ca279e540ac6baac761c3108, type: 3}
+      propertyPath: m_RefResolutionY
+      value: 256
+      objectReference: {fileID: 0}
     - target: {fileID: 3174560189434927200, guid: 04e7b7d5ca279e540ac6baac761c3108,
         type: 3}
       propertyPath: m_RootOrder
@@ -641,6 +649,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Mini Game Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 3174560189434927263, guid: 04e7b7d5ca279e540ac6baac761c3108,
+        type: 3}
+      propertyPath: orthographic size
+      value: 1.0546875
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04e7b7d5ca279e540ac6baac761c3108, type: 3}
@@ -859,6 +872,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5048446899258170066, guid: be96fae6322e3f047860e1cf680844b5,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5048446899258170066, guid: be96fae6322e3f047860e1cf680844b5,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5048446899616960081, guid: be96fae6322e3f047860e1cf680844b5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.3401374
+      objectReference: {fileID: 0}
+    - target: {fileID: 5048446899616960081, guid: be96fae6322e3f047860e1cf680844b5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.000000002418831
+      objectReference: {fileID: 0}
     - target: {fileID: 5048446899966722416, guid: be96fae6322e3f047860e1cf680844b5,
         type: 3}
       propertyPath: m_RootOrder
@@ -918,6 +951,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Steve
+      objectReference: {fileID: 0}
+    - target: {fileID: 5048446899988853256, guid: be96fae6322e3f047860e1cf680844b5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.1844414
+      objectReference: {fileID: 0}
+    - target: {fileID: 5048446899988853256, guid: be96fae6322e3f047860e1cf680844b5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.05652217
+      objectReference: {fileID: 0}
+    - target: {fileID: 5048446900570125374, guid: be96fae6322e3f047860e1cf680844b5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.196341
+      objectReference: {fileID: 0}
+    - target: {fileID: 5048446900570125374, guid: be96fae6322e3f047860e1cf680844b5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0565224
+      objectReference: {fileID: 0}
+    - target: {fileID: 5048446900781040473, guid: be96fae6322e3f047860e1cf680844b5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.3372236
+      objectReference: {fileID: 0}
+    - target: {fileID: 5048446900781040473, guid: be96fae6322e3f047860e1cf680844b5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.00000002505807
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be96fae6322e3f047860e1cf680844b5, type: 3}

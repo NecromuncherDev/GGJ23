@@ -167,6 +167,12 @@ namespace Platformer.Mechanics
                     }
                     if (IsGrounded)
                     {
+                        
+                        if (groundHit.collider != null)
+                        {
+                            Debug.Log(groundHit.collider.transform.name);
+                            transform.SetParent(groundHit.collider.transform);
+                        }
                         //how much of our velocity aligns with surface normal?
                         var projection = Vector2.Dot(velocity, currentNormal);
 
@@ -178,13 +184,15 @@ namespace Platformer.Mechanics
                             velocity = velocity - projection * currentNormal;
                         }
                     }
-/*                  else
+                    else
                     {
+                        
+
                         //We are airborne, but hit something, so cancel vertical up and horizontal velocity.
-                        velocity.x *= 0;
-                        velocity.y = Mathf.Min(velocity.y, 0);
+                        //velocity.x *= 0;
+                        //velocity.y = Mathf.Min(velocity.y, 0);
                     }
-*/                    //remove shellDistance from actual move distance.
+                    //remove shellDistance from actual move distance.
                     var modifiedDistance = hitBuffer[i].distance - shellRadius;
                     distance = modifiedDistance < distance ? modifiedDistance : distance;
 

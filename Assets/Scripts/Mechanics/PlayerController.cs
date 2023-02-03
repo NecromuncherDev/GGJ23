@@ -60,10 +60,11 @@ namespace Platformer.Mechanics
         {
             if (controlEnabled)
             {
-                move.x = Input.GetAxis("Horizontal");
+                move.x = Input.GetAxisRaw("Horizontal");
+                move.Normalize();
                 if (jumpState == JumpState.Grounded && Input.GetButtonDown("Jump"))
                     jumpState = JumpState.PrepareToJump;
-                else if (Input.GetButtonUp("Jump"))
+                else if (Input.GetButtonDown("Jump"))
                 {
                     stopJump = true;
                     Schedule<PlayerStopJump>().player = this;
@@ -72,6 +73,14 @@ namespace Platformer.Mechanics
             else
             {
                 move.x = 0;
+            }
+            if( move.x == 0 && move.y == 0)
+            {
+                animator.SetBool("Walking", false);
+            }
+            else
+            {
+                animator.SetBool("Walking", true);
             }
             UpdateSpriteAngle();
             UpdateJumpState();
