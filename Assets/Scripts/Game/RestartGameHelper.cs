@@ -6,7 +6,7 @@ namespace GGJ.Core
 {
     public class RestartGameHelper : MonoBehaviour
     {
-        public TMPro.TextMeshProUGUI finalMessage;
+        public TMPro.TMP_Text finalMessage;
 
         private void Start()
         {

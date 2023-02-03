@@ -60,6 +60,8 @@ namespace GGJ.Core
             VisitedLevels.Clear();
             CurrentGameState = GameState.Playing;
 
+            Timer.instance.Reset();
+
             SceneManager.LoadScene("LevelManager");
         }
     }
