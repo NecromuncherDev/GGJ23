@@ -35,7 +35,7 @@ namespace Platformer.Mechanics
         protected Rigidbody2D body;
         protected ContactFilter2D contactFilter;
         protected RaycastHit2D[] hitBuffer = new RaycastHit2D[16];
-
+        protected BoxCollider2D boxCollider;
         protected const float minMoveDistance = 0.001f;
         protected const float shellRadius = 0.01f;
 
@@ -73,6 +73,7 @@ namespace Platformer.Mechanics
         protected virtual void OnEnable()
         {
             body = GetComponent<Rigidbody2D>();
+            boxCollider = GetComponent<BoxCollider2D>();   
             body.isKinematic = true;
         }
 
@@ -128,15 +129,21 @@ namespace Platformer.Mechanics
         void PerformMovement(Vector2 move, bool yMovement)
         {
             var distance = move.magnitude;
-
+            
             if (distance > minMoveDistance)
             {
                 //check if we hit anything in current direction of travel
                 var count = body.Cast(move, contactFilter, hitBuffer, distance + shellRadius);
+                
                 for (var i = 0; i < count; i++)
                 {
+                    var groundHit = Physics2D.Raycast(Vector2.right * body.position.x + Vector2.up * boxCollider.bounds.min.y, Vector2.down, 0.1f);
+                    // Checks is the ground is bellow the player
+                    if (groundHit.collider != null && groundHit.point.y < hitBuffer[i].point.y)
+                    {
+                        continue;
+                    }
                     var currentNormal = hitBuffer[i].normal;
-
                     //is this surface flat enough to land on?
                     if (currentNormal.y > minGroundNormalY)
                     {
@@ -152,21 +159,18 @@ namespace Platformer.Mechanics
                     {
                         //how much of our velocity aligns with surface normal?
                         var projection = Vector2.Dot(velocity, currentNormal);
+                        
+
                         if (projection < 0)
                         {
                             //slower velocity if moving against the normal (up a hill).
                             velocity = velocity - projection * currentNormal;
                         }
                     }
-                    else
-                    {
-                        //We are airborne, but hit something, so cancel vertical up and horizontal velocity.
-                        velocity.x *= 0;
-                        velocity.y = Mathf.Min(velocity.y, 0);
-                    }
                     //remove shellDistance from actual move distance.
                     var modifiedDistance = hitBuffer[i].distance - shellRadius;
                     distance = modifiedDistance < distance ? modifiedDistance : distance;
+
                 }
             }
             body.position = body.position + move.normalized * distance;
