@@ -67,7 +67,15 @@ public class CharacterController2D : MonoBehaviour
     {
         bool wasGrounded = m_Grounded;
         m_Grounded = false;
-
+        
+        if(m_Rigidbody2D.velocity.x==0 && m_Rigidbody2D.velocity.y == 0)
+        {
+            animator.SetBool("Walking", false);
+        }
+        else
+        {
+            animator.SetBool("Walking", true);
+        }
         // The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
         // This can be done using layers instead but Sample Assets will not overwrite your project settings.
         Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround);
@@ -148,6 +156,7 @@ public class CharacterController2D : MonoBehaviour
             //only control the player if grounded or airControl is turned on
             else if (m_Grounded || m_AirControl)
             {
+                animator.SetBool("IsJumping", false);
                 if (m_Rigidbody2D.velocity.y < -limitFallSpeed)
                     m_Rigidbody2D.velocity = new Vector2(m_Rigidbody2D.velocity.x, -limitFallSpeed);
                 // Move the character by finding the target velocity

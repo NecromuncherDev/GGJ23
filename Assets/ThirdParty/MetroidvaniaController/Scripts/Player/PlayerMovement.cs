@@ -24,6 +24,13 @@ public class PlayerMovement : MonoBehaviour
 
         animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
 
+        if (horizontalMove == 0)
+        {
+            animator.SetBool("Walking", false);
+        } else
+        {
+            animator.SetBool("Walking", true);
+        }
         if (Input.GetKeyDown(KeyCode.Space))
         {
             jump = true;
