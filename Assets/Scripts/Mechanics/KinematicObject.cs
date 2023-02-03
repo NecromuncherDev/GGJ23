@@ -171,7 +171,6 @@ namespace Platformer.Mechanics
                         if (groundHit.collider != null)
                         {
                             Debug.Log(groundHit.collider.transform.name);
-                            transform.SetParent(groundHit.collider.transform);
                         }
                         //how much of our velocity aligns with surface normal?
                         var projection = Vector2.Dot(velocity, currentNormal);
