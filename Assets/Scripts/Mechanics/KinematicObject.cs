@@ -36,6 +36,7 @@ namespace Platformer.Mechanics
         protected ContactFilter2D contactFilter;
         protected RaycastHit2D[] hitBuffer = new RaycastHit2D[16];
         protected CircleCollider2D Collider;
+        [SerializeField] protected float airSpeedModifier = 0.75f;
         protected const float minMoveDistance = 0.001f;
         protected const float shellRadius = 0.01f;
 
@@ -108,7 +109,7 @@ namespace Platformer.Mechanics
             else
                 velocity += Physics2D.gravity * Time.deltaTime;
 
-            velocity.x = targetVelocity.x;
+            velocity.x = IsGrounded ? targetVelocity.x : targetVelocity.x * airSpeedModifier;
 
             IsGrounded = false;
 
@@ -123,7 +124,6 @@ namespace Platformer.Mechanics
             move = Vector2.up * deltaPosition.y;
 
             PerformMovement(move, true);
-
         }
 
         void PerformMovement(Vector2 move, bool yMovement)
@@ -186,8 +186,6 @@ namespace Platformer.Mechanics
                     }
                     else
                     {
-                        
-
                         //We are airborne, but hit something, so cancel vertical up and horizontal velocity.
                         //velocity.x *= 0;
                         //velocity.y = Mathf.Min(velocity.y, 0);
