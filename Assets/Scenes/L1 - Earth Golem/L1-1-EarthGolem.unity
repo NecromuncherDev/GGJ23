@@ -365,6 +365,7 @@ GameObject:
   - component: {fileID: 152991507}
   - component: {fileID: 152991506}
   - component: {fileID: 152991508}
+  - component: {fileID: 152991509}
   m_Layer: 7
   m_Name: Platform
   m_TagString: Untagged
@@ -485,6 +486,19 @@ PlatformEffector2D:
   m_UseSideFriction: 1
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!114 &152991509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152991504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c86dd4c597333449a7a522ac9962fc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delta: {x: 0, y: 0, z: 0}
 --- !u!1 &195848301
 GameObject:
   m_ObjectHideFlags: 0
@@ -1138,6 +1152,7 @@ GameObject:
   - component: {fileID: 780490458}
   - component: {fileID: 780490457}
   - component: {fileID: 780490459}
+  - component: {fileID: 780490460}
   m_Layer: 7
   m_Name: Platform
   m_TagString: Untagged
@@ -1258,6 +1273,19 @@ PlatformEffector2D:
   m_UseSideFriction: 1
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!114 &780490460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780490455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c86dd4c597333449a7a522ac9962fc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delta: {x: 0, y: 0, z: 0}
 --- !u!1 &852681642
 GameObject:
   m_ObjectHideFlags: 0
@@ -1381,6 +1409,7 @@ GameObject:
   - component: {fileID: 898521127}
   - component: {fileID: 898521126}
   - component: {fileID: 898521128}
+  - component: {fileID: 898521129}
   m_Layer: 7
   m_Name: Platform
   m_TagString: Untagged
@@ -1501,6 +1530,19 @@ PlatformEffector2D:
   m_UseSideFriction: 1
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!114 &898521129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898521124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c86dd4c597333449a7a522ac9962fc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delta: {x: 0, y: 0, z: 0}
 --- !u!1 &902113641 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3174560189434927260, guid: 04e7b7d5ca279e540ac6baac761c3108,
@@ -1535,6 +1577,7 @@ GameObject:
   - component: {fileID: 1049656384}
   - component: {fileID: 1049656383}
   - component: {fileID: 1049656385}
+  - component: {fileID: 1049656386}
   m_Layer: 7
   m_Name: Platform
   m_TagString: Untagged
@@ -1655,6 +1698,19 @@ PlatformEffector2D:
   m_UseSideFriction: 1
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!114 &1049656386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1049656381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c86dd4c597333449a7a522ac9962fc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delta: {x: 0, y: 0, z: 0}
 --- !u!1 &1128330836
 GameObject:
   m_ObjectHideFlags: 0
@@ -1770,7 +1826,7 @@ PrefabInstance:
     - target: {fileID: 3174560189434927263, guid: 04e7b7d5ca279e540ac6baac761c3108,
         type: 3}
       propertyPath: orthographic size
-      value: 1.1445312
+      value: 1.2246094
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04e7b7d5ca279e540ac6baac761c3108, type: 3}
@@ -1780,6 +1836,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1501964071}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1378742581 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114145887554720856, guid: 2394af2c4fa002e4194c10711e99fa14,
+    type: 3}
+  m_PrefabInstance: {fileID: 1501964071}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8644d33345e77614ba3ace9c18398d0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1501964071
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1834,6 +1902,41 @@ PrefabInstance:
     - target: {fileID: 4660076192433278, guid: 2394af2c4fa002e4194c10711e99fa14, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114231493902538710, guid: 2394af2c4fa002e4194c10711e99fa14,
+        type: 3}
+      propertyPath: OnGroundEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114231493902538710, guid: 2394af2c4fa002e4194c10711e99fa14,
+        type: 3}
+      propertyPath: OnGroundEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114231493902538710, guid: 2394af2c4fa002e4194c10711e99fa14,
+        type: 3}
+      propertyPath: OnGroundEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1378742581}
+    - target: {fileID: 114231493902538710, guid: 2394af2c4fa002e4194c10711e99fa14,
+        type: 3}
+      propertyPath: OnGroundEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114231493902538710, guid: 2394af2c4fa002e4194c10711e99fa14,
+        type: 3}
+      propertyPath: OnGroundEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnGround
+      objectReference: {fileID: 0}
+    - target: {fileID: 114231493902538710, guid: 2394af2c4fa002e4194c10711e99fa14,
+        type: 3}
+      propertyPath: OnGroundEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerMovement, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 114231493902538710, guid: 2394af2c4fa002e4194c10711e99fa14,
+        type: 3}
+      propertyPath: OnGroundEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2394af2c4fa002e4194c10711e99fa14, type: 3}
