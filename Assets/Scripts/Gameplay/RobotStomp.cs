@@ -7,7 +7,7 @@ using static Platformer.Core.Simulation;
 namespace Platformer.Gameplay
 {
 
-	public class RobotStomp : Simulation.Event<PlayerEnemyCollision>
+	public class RobotStomp : Simulation.Event<RobotStomp>
 	{
         PlatformerModel model = Simulation.GetModel<PlatformerModel>();
         public Robot robot;
