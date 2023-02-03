@@ -17,7 +17,7 @@ namespace GGJ.Core
 
         public Level[] layers;
 
-        private void Start()
+        private void Awake()
         {
             if (CheckWinGame())
             {
@@ -30,9 +30,12 @@ namespace GGJ.Core
                 State.LoseGame();
                 return;
             }
+        }
 
+        private void Start()
+        {
             InitPlayerPosition();
-            UpdateNodeColors();
+            UpdateNodesView();
         }
 
         private void Update()
@@ -97,7 +100,7 @@ namespace GGJ.Core
             player.position = node.transform.position;
         }
 
-        private void UpdateNodeColors()
+        private void UpdateNodesView()
         {
             for (int layerIndex = 0; layerIndex < layers.Length; layerIndex++)
             {
@@ -109,6 +112,17 @@ namespace GGJ.Core
                     {
                         node.GetComponent<SpriteRenderer>().color = Color.grey;
                     }
+
+                    var levelIndex = new LevelIndex { LayerIndex = layerIndex, NodeIndex = nodeIndex };
+                    if (State.WonLevels.Contains(levelIndex))
+                    {
+                        node.edge.sprite = node.LitUp;
+                    }
+                    else if (layerIndex < State.CurrentLayerIndex)
+                    {
+                        node.edge.sprite = node.Dimmed;
+                    }
+
                 }
             }
         }
@@ -116,7 +130,7 @@ namespace GGJ.Core
         private bool IsEnabledNode(Node node)
         {
             var levelIndex = FindLevelIndex(node);
-            if (levelIndex.LayerIndex != State.CurrentLayer)
+            if (levelIndex.LayerIndex != State.CurrentLayerIndex)
             {
                 return false;
             }
@@ -131,7 +145,7 @@ namespace GGJ.Core
                 return true;
             }
 
-            if (!State.isLastLevelWin)
+            if (!State.isLastLevelWon)
             {
                 return true;
             }
@@ -150,22 +164,22 @@ namespace GGJ.Core
 
         private bool CheckWinGame()
         {
-            return State.CurrentLayer >= layers.Length;
+            return State.CurrentLayerIndex >= layers.Length;
         }
 
         private bool CheckLoseGame()
         {
             int visitedNodes = 0;
-            for (int nodeIndex = 0; nodeIndex < layers[State.CurrentLayer].nodes.Length; nodeIndex++)
+            for (int nodeIndex = 0; nodeIndex < layers[State.CurrentLayerIndex].nodes.Length; nodeIndex++)
             {
-                var levelIndex = new LevelIndex { LayerIndex = State.CurrentLayer, NodeIndex = nodeIndex };
+                var levelIndex = new LevelIndex { LayerIndex = State.CurrentLayerIndex, NodeIndex = nodeIndex };
                 if (State.VisitedLevels.Contains(levelIndex))
                 {
                     visitedNodes++;
                 }
             }
 
-            return visitedNodes >= layers[State.CurrentLayer].nodes.Length;
+            return visitedNodes >= layers[State.CurrentLayerIndex].nodes.Length;
         }
     }
 }
