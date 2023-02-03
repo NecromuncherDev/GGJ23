@@ -14,12 +14,13 @@ namespace GGJ.Core
 
     public static class State
     {
-        public static int CurrentLayer = 0;
+        public static int CurrentLayerIndex = 0;
         public static LevelIndex CurrentLevelIndex = LevelIndex.Invalid;
         public static HashSet<LevelIndex> VisitedLevels = new HashSet<LevelIndex>();
+        public static HashSet<LevelIndex> WonLevels = new HashSet<LevelIndex>();
 
         public static GameState CurrentGameState = GameState.Playing;
-        public static bool isLastLevelWin = false;
+        public static bool isLastLevelWon = false;
 
         public static void MarkVisited(LevelIndex levelIndex)
         {
@@ -32,15 +33,16 @@ namespace GGJ.Core
 
         public static void WinLevel()
         {
-            CurrentLayer = CurrentLevelIndex.LayerIndex + 1;
-            isLastLevelWin = true;
+            WonLevels.Add(CurrentLevelIndex);
+            CurrentLayerIndex = CurrentLevelIndex.LayerIndex + 1;
+            isLastLevelWon = true;
 
             SceneManager.LoadScene("LevelManager");
         }
 
         public static void LoseLevel()
         {
-            isLastLevelWin = false;
+            isLastLevelWon = false;
 
             SceneManager.LoadScene("LevelManager");
         }
@@ -59,9 +61,10 @@ namespace GGJ.Core
 
         public static void RestartGame()
         {
-            CurrentLayer = 0;
+            CurrentLayerIndex = 0;
             CurrentLevelIndex = LevelIndex.Invalid;
             VisitedLevels.Clear();
+            WonLevels.Clear();
             CurrentGameState = GameState.Playing;
 
             Timer.instance.Reset();
