@@ -46,7 +46,7 @@ namespace GGJ.Core
                 var levelIndex = FindLevelIndex(node);
                 Debug.Assert(levelIndex != LevelIndex.Invalid);
 
-                if (State.VisitedLevels.Contains(levelIndex) || State.CurrentLayer != levelIndex.LayerIndex)
+                if (!IsEnabledNode(node))
                     return;
 
                 player.position = node.transform.position;
@@ -105,20 +105,47 @@ namespace GGJ.Core
                 for (int nodeIndex = 0; nodeIndex < layer.nodes.Length; nodeIndex++)
                 {
                     var node = layer.nodes[nodeIndex];
-                    var spriteRenderer = node.GetComponent<SpriteRenderer>();
-                    if (layerIndex != State.CurrentLayer)
+                    if (!IsEnabledNode(node))
                     {
-                        spriteRenderer.color = Color.black;
-                        continue;
-                    }
-
-                    var levelIndex = new LevelIndex { LayerIndex = layerIndex, NodeIndex = nodeIndex };
-                    if (State.VisitedLevels.Contains(levelIndex))
-                    {
-                        spriteRenderer.color = Color.green;
+                        node.GetComponent<SpriteRenderer>().color = Color.grey;
                     }
                 }
             }
+        }
+
+        private bool IsEnabledNode(Node node)
+        {
+            var levelIndex = FindLevelIndex(node);
+            if (levelIndex.LayerIndex != State.CurrentLayer)
+            {
+                return false;
+            }
+
+            if (State.VisitedLevels.Contains(levelIndex))
+            {
+                return false;
+            }
+
+            if (State.CurrentLevelIndex == LevelIndex.Invalid)
+            {
+                return true;
+            }
+
+            if (!State.isLastLevelWin)
+            {
+                return true;
+            }
+
+            var curNode = layers[State.CurrentLevelIndex.LayerIndex].nodes[State.CurrentLevelIndex.NodeIndex];
+            for (int i = 0; i < curNode.nextNodes.Length; i++)
+            {
+                if (curNode.nextNodes[i] == node)
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         private bool CheckWinGame()

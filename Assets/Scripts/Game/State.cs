@@ -19,6 +19,7 @@ namespace GGJ.Core
         public static HashSet<LevelIndex> VisitedLevels = new HashSet<LevelIndex>();
 
         public static GameState CurrentGameState = GameState.Playing;
+        public static bool isLastLevelWin = false;
 
         public static void MarkVisited(LevelIndex levelIndex)
         {
@@ -32,12 +33,15 @@ namespace GGJ.Core
         public static void WinLevel()
         {
             CurrentLayer = CurrentLevelIndex.LayerIndex + 1;
+            isLastLevelWin = true;
 
             SceneManager.LoadScene("LevelManager");
         }
 
         public static void LoseLevel()
         {
+            isLastLevelWin = false;
+
             SceneManager.LoadScene("LevelManager");
         }
 
