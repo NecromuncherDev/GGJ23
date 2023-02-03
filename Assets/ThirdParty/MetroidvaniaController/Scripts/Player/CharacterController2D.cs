@@ -24,7 +24,7 @@ public class CharacterController2D : MonoBehaviour
     private bool canDash = true;
     private bool isDashing = false; //If player is dashing
     private bool m_IsWall = false; //If there is a wall in front of the player
-    private bool isWallSliding = false; //If player is sliding in a wall
+    private bool isWallSliding = false; //If player is sliding in a wall (DISABLED!!!)
     private bool oldWallSlidding = false; //If player is sliding in a wall in the previous frame
     private float prevVelocityX = 0f;
     private bool canCheck = false; //For check if player is wallsliding
@@ -67,8 +67,8 @@ public class CharacterController2D : MonoBehaviour
     {
         bool wasGrounded = m_Grounded;
         m_Grounded = false;
-        
-        if(m_Rigidbody2D.velocity.x==0 && m_Rigidbody2D.velocity.y == 0)
+
+        if (m_Rigidbody2D.velocity.x == 0 && m_Rigidbody2D.velocity.y == 0)
         {
             animator.SetBool("Walking", false);
         }
@@ -201,7 +201,7 @@ public class CharacterController2D : MonoBehaviour
             {
                 if (!oldWallSlidding && m_Rigidbody2D.velocity.y < 0 || isDashing)
                 {
-                    isWallSliding = true;
+                    //isWallSliding = true;
                     m_WallCheck.localPosition = new Vector3(-m_WallCheck.localPosition.x, m_WallCheck.localPosition.y, 0);
                     Flip();
                     StartCoroutine(WaitToCheck(0.1f));
