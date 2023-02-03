@@ -73,6 +73,14 @@ namespace Platformer.Mechanics
             {
                 move.x = 0;
             }
+            if( move.x == 0 && move.y == 0)
+            {
+                animator.SetBool("Walking", false);
+            }
+            else
+            {
+                animator.SetBool("Walking", true);
+            }
             UpdateSpriteAngle();
             UpdateJumpState();
             base.Update();
