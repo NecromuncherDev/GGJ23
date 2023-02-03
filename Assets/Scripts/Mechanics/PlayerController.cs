@@ -86,7 +86,7 @@ namespace Platformer.Mechanics
                 normal = Vector3.forward;
             }
 
-            Debug.DrawRay(transform.position, groundNormal*5, Color.red);
+            Debug.DrawRay(transform.position, groundNormal*5, Color.gray);
             Debug.DrawRay(transform.position, Vector3.forward, Color.green);
             inner.transform.rotation = Quaternion.LookRotation(Vector3.forward, normal);
         }
