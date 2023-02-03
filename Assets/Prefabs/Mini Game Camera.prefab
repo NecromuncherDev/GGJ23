@@ -13,8 +13,7 @@ GameObject:
   - component: {fileID: 3174560189434927261}
   - component: {fileID: 3174560189434927202}
   - component: {fileID: 3174560189434927201}
-  - component: {fileID: 2119902723}
-  - component: {fileID: 2119902724}
+  - component: {fileID: 2119902725}
   m_Layer: 0
   m_Name: Mini Game Camera
   m_TagString: MainCamera
@@ -47,7 +46,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.28266287, g: 0.31789848, b: 0.3773585, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -57,14 +56,14 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.025925934
+    y: 0
     width: 1
-    height: 0.94814813
+    height: 1
   near clip plane: 0.1
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 1
+  orthographic size: 1.0546875
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -138,7 +137,7 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   sharedProfile: {fileID: 11400000, guid: 3015cca3ee7cb4049aa1b45cb14b9bed, type: 2}
---- !u!114 &2119902723
+--- !u!114 &2119902725
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -147,23 +146,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 3174560189434927260}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ca652c13353f448d9227970c0928082, type: 3}
+  m_Script: {fileID: 11500000, guid: c88f5cead0c0b2a4eb05b5900433f8d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  referenceHeight: 256
-  pixelsPerUnit: 128
---- !u!114 &2119902724
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3174560189434927260}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4da2f2c838645f0973341c12c210e09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pipeline: {fileID: 11400000, guid: 665072d3994004544bb27f2c5fca09c4, type: 2}
-  _camera: {fileID: 3174560189434927263}
-  _pixelsPerUnit: 128
+  m_ComponentVersion: 1
+  m_AssetsPPU: 128
+  m_RefResolutionX: 256
+  m_RefResolutionY: 256
+  m_CropFrame: 0
+  m_GridSnapping: 1
+  m_UpscaleRT: 0
+  m_PixelSnapping: 0
+  m_CropFrameX: 0
+  m_CropFrameY: 0
+  m_StretchFill: 0
