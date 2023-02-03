@@ -60,10 +60,11 @@ namespace Platformer.Mechanics
         {
             if (controlEnabled)
             {
-                move.x = Input.GetAxis("Horizontal");
+                move.x = Input.GetAxisRaw("Horizontal");
+                move.Normalize();
                 if (jumpState == JumpState.Grounded && Input.GetButtonDown("Jump"))
                     jumpState = JumpState.PrepareToJump;
-                else if (Input.GetButtonUp("Jump"))
+                else if (Input.GetButtonDown("Jump"))
                 {
                     stopJump = true;
                     Schedule<PlayerStopJump>().player = this;
