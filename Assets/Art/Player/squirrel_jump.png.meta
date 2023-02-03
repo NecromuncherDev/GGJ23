@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8cbb47c1bd8b97648b6037ab8e11ef0f
+guid: 9b62b674ac7e53b48b02bd74e518ae6d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -45,8 +45,8 @@ TextureImporter:
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 0
-  spritePivot: {x: 0.5, y: 0.5}
+  alignment: 7
+  spritePivot: {x: 0.5, y: 0}
   spritePixelsToUnits: 128
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -117,85 +117,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: squirrel_0
+      name: squirrel_jump_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 5
-        width: 45
-        height: 34
+        x: 1
+        y: 3
+        width: 24
+        height: 19
       alignment: 9
-      pivot: {x: 0.49705115, y: 0.008242762}
+      pivot: {x: 0.61634153, y: 0.05324843}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb60ab6f607b44a49b7791516f78416a
-      internalID: -1210343671
+      spriteID: d258a6bfd75ba934e9705333a1d77d12
+      internalID: 269273192
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: squirrel_1
+      name: squirrel_jump_1
       rect:
         serializedVersion: 2
-        x: 45
-        y: 5
-        width: 45
-        height: 34
+        x: 49
+        y: 9
+        width: 28
+        height: 26
       alignment: 9
-      pivot: {x: 0.49705097, y: 0.00043709137}
+      pivot: {x: 0.46011135, y: 0.036065467}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cf5c7f1aac23015488219d8e56574f3a
-      internalID: -913813909
+      spriteID: 651c9fa3b07d20f4f8118d155f03e72b
+      internalID: -1189588429
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: squirrel_2
+      name: squirrel_jump_2
       rect:
         serializedVersion: 2
-        x: 90
-        y: 6
-        width: 45
-        height: 33
+        x: 92
+        y: 7
+        width: 38
+        height: 21
       alignment: 9
-      pivot: {x: 0.49705097, y: 0.005404357}
+      pivot: {x: 0.90854204, y: 0.016018959}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8202255d37484804481e4cb9878236f1
-      internalID: -250417145
+      spriteID: 1c11450ba20252f45bfd7dafd0b6c9dc
+      internalID: 1753007803
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: squirrel_3
+      name: squirrel_jump_3
       rect:
         serializedVersion: 2
         x: 135
-        y: 5
-        width: 45
-        height: 34
+        y: 6
+        width: 33
+        height: 12
       alignment: 9
-      pivot: {x: 0.49705064, y: 0.008242762}
+      pivot: {x: 0.6590701, y: 0.034633636}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bb90a3cd2b1b8054a9b4be748db0cadc
-      internalID: 1786566159
+      spriteID: 15ac3679b6afb9044a07959c5439da47
+      internalID: 1416403799
       vertices: []
       indices: 
       edges: []
@@ -211,10 +211,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      squirrel_3: 1786566159
-      squirrel_1: -913813909
-      squirrel_2: -250417145
-      squirrel_0: -1210343671
+      squirrel_jump_0: 269273192
+      squirrel_jump_2: 1753007803
+      squirrel_jump_1: -1189588429
+      squirrel_jump_3: 1416403799
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
