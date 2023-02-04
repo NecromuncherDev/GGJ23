@@ -29,4 +29,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/L1 - Earth Golem/L1-4-EarthGolem.unity
     guid: ac942070637424148ae01aa7efe44123
+  - enabled: 1
+    path: Assets/Scenes/L2 - Ice Giant/L2-1 Ice Giant.unity
+    guid: a8f2f9b5c96f73646a4bdeab3b58a6e5
+  - enabled: 1
+    path: Assets/Scenes/L2 - Ice Giant/L2-2 Ice Giant.unity
+    guid: b777906203c7c9d42b946692ea2092c7
   m_configObjects: {}
