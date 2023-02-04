@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     bool jump = false;
     bool dash = false;
     private bool portalActive = false;
-    [SerializeField]  private Vector3 offset;
+    [SerializeField] private Vector3 offset;
 
     private PlatformDelta curPlatform;
 
@@ -51,24 +51,8 @@ public class PlayerMovement : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.R))
         {
-                InstantiatePortal();
-           
-
+            InstantiatePortal();
         }
-
-        /*if (Input.GetAxisRaw("Dash") == 1 || Input.GetAxisRaw("Dash") == -1) //RT in Unity 2017 = -1, RT in Unity 2019 = 1
-		{
-			if (dashAxis == false)
-			{
-				dashAxis = true;
-				dash = true;
-			}
-		}
-		else
-		{
-			dashAxis = false;
-		}
-		*/
 
         if (curPlatform != null)
         {
@@ -79,8 +63,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void InstantiatePortal()
     {
-        var instance = Instantiate(portal, transform.position + (transform.localScale.x * offset), Quaternion.identity); 
-        Debug.Log(instance.transform.position );
+        var instance = Instantiate(portal, transform.position + (transform.localScale.x * offset), Quaternion.identity);
+        Debug.Log(instance.transform.position);
         portalActive = true;
     }
 
