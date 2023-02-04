@@ -20,4 +20,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/L1 - Earth Golem/L1-1-EarthGolem.unity
     guid: 1b51e41551b84404ea5e2584291202a8
+  - enabled: 1
+    path: Assets/Scenes/L1 - Earth Golem/L1-2-EarthGolem.unity
+    guid: b697257162706f542923d58eff3bf423
+  - enabled: 1
+    path: Assets/Scenes/L1 - Earth Golem/L1-3-EarthGolem.unity
+    guid: 25c2c888e05956946afde36c3cb41b2f
+  - enabled: 1
+    path: Assets/Scenes/L1 - Earth Golem/L1-4-EarthGolem.unity
+    guid: ac942070637424148ae01aa7efe44123
   m_configObjects: {}
