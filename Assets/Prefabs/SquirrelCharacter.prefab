@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4291727345091452}
-  m_Layer: 1
+  m_Layer: 6
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 70405055242815152}
   - component: {fileID: 82701611152381692}
   - component: {fileID: 8885767044444297811}
-  m_Layer: 1
+  m_Layer: 6
   m_Name: SquirrelCharacter
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -63,7 +63,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.7, y: -1.37, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4291727345091452}
   - {fileID: 607289565857716887}
@@ -161,7 +161,7 @@ MonoBehaviour:
   controller: {fileID: 114231493902538710}
   animator: {fileID: 9068004164416082368}
   runSpeed: 8
-  offset: {x: 0.4, y: 0.075, z: 0}
+  offset: {x: 0.4, y: 0.15, z: 0}
 --- !u!50 &50738830109512580
 Rigidbody2D:
   serializedVersion: 4
@@ -192,7 +192,7 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 1377240496476148}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 9052456a3cce4ef41a2575b0984a3242, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -307,7 +307,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffad43bb006db4856a9c527b89b48db9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 2
+  maxHP: 3
   HEALTH: {fileID: 11400000, guid: a6552de66233e4a01a26944bbb5b0d2d, type: 2}
 --- !u!1 &1477428158609486
 GameObject:
@@ -320,7 +320,7 @@ GameObject:
   - component: {fileID: 4202976304329374}
   - component: {fileID: 198584872278178884}
   - component: {fileID: 199702487371442802}
-  m_Layer: 1
+  m_Layer: 6
   m_Name: SmokeTrail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5144,7 +5144,7 @@ GameObject:
   - component: {fileID: 4559817074117408}
   - component: {fileID: 198967111524372206}
   - component: {fileID: 199720515671813628}
-  m_Layer: 1
+  m_Layer: 6
   m_Name: SmokeGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10024,7 +10024,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 607289565857716887}
-  m_Layer: 1
+  m_Layer: 6
   m_Name: WallCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}

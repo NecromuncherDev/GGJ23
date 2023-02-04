@@ -16,7 +16,7 @@ public class AnimationStigger : MonoBehaviour
     float lastCollision = 0;
 
 
-    private void OnTriggerEnter2D(Collider2D collider)
+    private void OnTriggerStay2D(Collider2D collider)
     {
         //Debug.Log($"Trigger enter {collider.gameObject.name}");
 
