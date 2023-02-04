@@ -1559,28 +1559,6 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
---- !u!1 &902113641 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3174560189434927260, guid: 04e7b7d5ca279e540ac6baac761c3108,
-    type: 3}
-  m_PrefabInstance: {fileID: 1233142896}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &902113648
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 902113641}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b694b0a717c95a94baecbd498413d69d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 4
-  objectToFollow: {fileID: 1378742577}
-  useCustomGap: 1
-  customGap: {x: 0, y: 0, z: -9}
 --- !u!1 &1128330836
 GameObject:
   m_ObjectHideFlags: 0
@@ -1696,8 +1674,13 @@ PrefabInstance:
     - target: {fileID: 3174560189434927263, guid: 04e7b7d5ca279e540ac6baac761c3108,
         type: 3}
       propertyPath: orthographic size
-      value: 1.3222656
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8998725548249615214, guid: 04e7b7d5ca279e540ac6baac761c3108,
+        type: 3}
+      propertyPath: objectToFollow
+      value: 
+      objectReference: {fileID: 1378742577}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04e7b7d5ca279e540ac6baac761c3108, type: 3}
 --- !u!1001 &1290463705
