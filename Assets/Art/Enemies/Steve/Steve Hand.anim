@@ -3865,7 +3865,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: root/root end/torso
+    path: root/root end/right collar/right shoulder
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -3875,7 +3875,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: root/root end/torso
+    path: root/root end/right collar/right shoulder
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -3885,7 +3885,37 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: root/root end/torso
+    path: root/root end/right collar/right shoulder
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: root/root end/right collar/head
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: root/root end/right collar/head
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: root/root end/right collar/head
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -3954,36 +3984,6 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: root/root end/right collar/left soulder/bone_13/bone_14
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.y
-    path: root/root end/right collar/left soulder/bone_13/bone_14
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.z
-    path: root/root end/right collar/left soulder/bone_13/bone_14
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
     path: Right Hand IK
     classID: 4
@@ -4015,7 +4015,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: root/root end/right collar/right shoulder
+    path: root/root end/right collar/left soulder/bone_13/bone_14
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -4025,7 +4025,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: root/root end/right collar/right shoulder
+    path: root/root end/right collar/left soulder/bone_13/bone_14
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -4035,7 +4035,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: root/root end/right collar/right shoulder
+    path: root/root end/right collar/left soulder/bone_13/bone_14
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -4045,7 +4045,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: root/root end/right collar/head
+    path: root/root end/torso
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -4055,7 +4055,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: root/root end/right collar/head
+    path: root/root end/torso
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -4065,7 +4065,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: root/root end/right collar/head
+    path: root/root end/torso
     classID: 4
     script: {fileID: 0}
   m_HasGenericRootTransform: 0
