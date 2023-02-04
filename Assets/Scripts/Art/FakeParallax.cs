@@ -12,6 +12,7 @@ namespace Art
         [SerializeField] private float _amount;
         [SerializeField] private float _amountY;
         [SerializeField] private float _heightModifier;
+        [SerializeField] private float _heightOffset;
         
         [SerializeField] private GameObject _follow;
 
@@ -38,7 +39,8 @@ namespace Art
                 var group = _parallaxGroups[i];
                 var amountPerGroup = _amountPerGroup[i];
                 group.transform.localPosition = new Vector3(
-                    amountPerGroup * _amount, amountPerGroup * _amountY * _heightModifier, 0);
+                    amountPerGroup * _amount, 
+                    _heightOffset + amountPerGroup * _amountY * _heightModifier, 0);
             }
         }
         
