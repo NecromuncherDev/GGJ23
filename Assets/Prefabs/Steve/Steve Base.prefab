@@ -608,6 +608,7 @@ Transform:
   - {fileID: 562882846}
   - {fileID: 1496968565}
   - {fileID: 614829770}
+  - {fileID: 2417759722352396979}
   m_Father: {fileID: 5048446899966722416}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1600,6 +1601,91 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7132446431926277873, guid: 04f1e9681451446dcaaf47c4243b8a59,
     type: 3}
   m_PrefabInstance: {fileID: 2636217538847450379}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2830741748185499276
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5048446899517875238}
+    m_Modifications:
+    - target: {fileID: 487878835920489472, guid: 907142c301d8aa24c8db32bbb4c0948a,
+        type: 3}
+      propertyPath: shakeTimer
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 487878835920489472, guid: 907142c301d8aa24c8db32bbb4c0948a,
+        type: 3}
+      propertyPath: shakeAmount
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 487878835920489473, guid: 907142c301d8aa24c8db32bbb4c0948a,
+        type: 3}
+      propertyPath: m_Name
+      value: Camera Shake On Enable
+      objectReference: {fileID: 0}
+    - target: {fileID: 487878835920489535, guid: 907142c301d8aa24c8db32bbb4c0948a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 487878835920489535, guid: 907142c301d8aa24c8db32bbb4c0948a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 487878835920489535, guid: 907142c301d8aa24c8db32bbb4c0948a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 487878835920489535, guid: 907142c301d8aa24c8db32bbb4c0948a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 487878835920489535, guid: 907142c301d8aa24c8db32bbb4c0948a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 487878835920489535, guid: 907142c301d8aa24c8db32bbb4c0948a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 487878835920489535, guid: 907142c301d8aa24c8db32bbb4c0948a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 487878835920489535, guid: 907142c301d8aa24c8db32bbb4c0948a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 487878835920489535, guid: 907142c301d8aa24c8db32bbb4c0948a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 487878835920489535, guid: 907142c301d8aa24c8db32bbb4c0948a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 487878835920489535, guid: 907142c301d8aa24c8db32bbb4c0948a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 907142c301d8aa24c8db32bbb4c0948a, type: 3}
+--- !u!4 &2417759722352396979 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 487878835920489535, guid: 907142c301d8aa24c8db32bbb4c0948a,
+    type: 3}
+  m_PrefabInstance: {fileID: 2830741748185499276}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4003994973661941210
 PrefabInstance:

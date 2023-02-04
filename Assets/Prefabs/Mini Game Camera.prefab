@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3174560189434927201}
   - component: {fileID: 2119902725}
   - component: {fileID: 8998725548249615214}
+  - component: {fileID: 1780498303}
   m_Layer: 0
   m_Name: Mini Game Camera
   m_TagString: MainCamera
@@ -64,7 +65,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 1.0546875
+  orthographic size: 1.875
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -177,3 +178,17 @@ MonoBehaviour:
   objectToFollow: {fileID: 0}
   useCustomGap: 1
   customGap: {x: 0, y: 0.5, z: -9}
+--- !u!114 &1780498303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3174560189434927260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d1dea44570a4936a71965b3d808cf4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeTimer: 0
+  shakeAmount: 4
