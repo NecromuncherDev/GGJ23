@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class UIHealth : MonoBehaviour
 {
+    [SerializeField]
+    private FloatVariable HEALTH;
+
     private Slider slider;
 
     private void Start()
@@ -12,5 +15,8 @@ public class UIHealth : MonoBehaviour
         slider = GetComponentInChildren<Slider>();
     }
 
-    public float Health { set => slider.value = value; }
+    private void Update()
+    {
+        slider.value = HEALTH.Value;
+    }
 }

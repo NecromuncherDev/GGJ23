@@ -27,7 +27,11 @@ namespace Platformer.Mechanics
 
         void OnDisable()
         {
-            if (Instance == this) Instance = null;
+            if (Instance == this)
+            {
+                Simulation.Clear();
+                Instance = null;
+            }
         }
 
         void Update()
