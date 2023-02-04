@@ -7,7 +7,7 @@ namespace GGJ.Core
     public class Timer : MonoSingleton<Timer>
     {
         public float time = 60.0f;
-
+        public bool isStopped = false;
         private float initTime = 60.0f;
 
         private void Awake()
@@ -27,12 +27,20 @@ namespace GGJ.Core
             if (State.CurrentGameState != GameState.Playing)
                 return;
 
-            time -= Time.deltaTime;
+            if (!isStopped)
+            {
+                time -= Time.deltaTime;
+            }
             if (time <= 0.0f)
             {
                 time = 0.0f;
                 State.LoseGame();
             }
+        }
+
+        public void Stop()
+        {
+            isStopped = true;
         }
 
         public void Reset()
