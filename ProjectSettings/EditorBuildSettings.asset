@@ -6,12 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
-    path: Assets/Scenes/WinLoseTemp.unity
-    guid: e4a64f8fa3d5eeb4e842669aeb2099fd
-  - enabled: 1
     path: Assets/Scenes/LevelManager.unity
     guid: 467b8a34316262f4d989c2374388b714
   - enabled: 1
@@ -35,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/L2 - Ice Giant/L2-2 Ice Giant.unity
     guid: b777906203c7c9d42b946692ea2092c7
+  - enabled: 1
+    path: Assets/Scenes/L3 - Magma/L3-1 Magma Mike.unity
+    guid: 1c9be6e2a0e5293449d79df99353fdab
   m_configObjects: {}

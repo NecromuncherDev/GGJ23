@@ -578,7 +578,7 @@ PrefabInstance:
     - target: {fileID: 2154619187117724975, guid: 4fcd077525dad7545971adb7263a08dc,
         type: 3}
       propertyPath: sceneName
-      value: L1-1-EarthGolem
+      value: L3-1 Magma Mike
       objectReference: {fileID: 0}
     - target: {fileID: 2154619187117724975, guid: 4fcd077525dad7545971adb7263a08dc,
         type: 3}
