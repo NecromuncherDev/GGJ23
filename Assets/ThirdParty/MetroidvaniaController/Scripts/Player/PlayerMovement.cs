@@ -7,7 +7,6 @@ public class PlayerMovement : MonoBehaviour
 {
 
     public GameObject portal;
-
     public CharacterController2D controller;
     public Animator animator;
 
@@ -17,14 +16,12 @@ public class PlayerMovement : MonoBehaviour
     bool jump = false;
     bool dash = false;
     private bool portalActive = false;
-    [SerializeField]     private Vector3 offset;
+    [SerializeField]  private Vector3 offset;
 
-    //bool dashAxis = false;
+    private PlatformDelta curPlatform;
 
-    // Update is called once per frame
     void Update()
     {
-
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
         animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
@@ -32,12 +29,15 @@ public class PlayerMovement : MonoBehaviour
         if (horizontalMove == 0)
         {
             animator.SetBool("Walking", false);
-        } else
+        }
+        else
         {
             animator.SetBool("Walking", true);
         }
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            curPlatform = null;
             jump = true;
         }
 
@@ -70,6 +70,11 @@ public class PlayerMovement : MonoBehaviour
 		}
 		*/
 
+        if (curPlatform != null)
+        {
+            transform.position += curPlatform.delta;
+        }
+
     }
 
     private void InstantiatePortal()
@@ -82,6 +87,15 @@ public class PlayerMovement : MonoBehaviour
     public void OnFall()
     {
         animator.SetBool("IsJumping", true);
+    }
+
+    public void OnGround()
+    {
+        var platform = controller.lastGround.GetComponent<PlatformDelta>();
+        if (platform != null)
+            curPlatform = platform;
+        else
+            curPlatform = null;
     }
 
     public void OnLanding()
