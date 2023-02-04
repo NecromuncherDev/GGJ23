@@ -16,8 +16,8 @@ TagManager:
   - Player
   - Platform
   - Portal
-  - 
-  - 
+  - DamageTrigger
+  - DamageBox
   - 
   - 
   - 
