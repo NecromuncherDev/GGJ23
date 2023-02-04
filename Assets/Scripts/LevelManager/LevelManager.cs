@@ -17,13 +17,15 @@ namespace GGJ.Core
     {
         public Transform player;
         public Level[] layers;
-
-        private async void Awake()
+        public bool winGame = false;
+        public float timer = 10;
+        private float time = 0;
+        private Vector3 startPosition = new Vector3(-2.25f, 1, -10f);
+        private void Awake()
         {
             if (CheckWinGame())
             {
-                await moveEndingCamera(new Vector3(-2.25f, 3f, -10f), 3);
-                State.WinGame();
+                winGame = true;
                 return;
             }
 
@@ -59,6 +61,17 @@ namespace GGJ.Core
                 State.MarkVisited(levelIndex);
 
                 SceneManager.LoadScene(node.sceneName);
+            }
+
+            if (winGame)
+            {  
+                Timer.instance.Stop();
+                Camera.main.transform.position = Vector3.Lerp(startPosition, new Vector3(-2.25f, 3f, -10f), time / timer);
+                time += Time.deltaTime;
+                if (time > timer)
+                {
+                    State.WinGame();
+                }
             }
         }
 
@@ -187,18 +200,19 @@ namespace GGJ.Core
             return State.CurrentLayerIndex >= layers.Length;
         }
 
-        private async Task moveEndingCamera(Vector3 targetPosition, float duration)
+        IEnumerator moveEndingCamera(Vector3 targetPosition, float duration)
         {
             float time = 0;
             Vector3 startPosition = Camera.main.transform.position;
             while (time < duration)
             {
                 transform.position = Vector3.Lerp(startPosition, targetPosition, time / duration);
-                time += Time.deltaTime;
-                await Task.Yield();
+                time += Time.deltaTime; 
+                yield return null;
             }
             Camera.main.transform.position = targetPosition;
-
+            
+            State.WinGame();
         }
 
         private bool CheckLoseGame()
