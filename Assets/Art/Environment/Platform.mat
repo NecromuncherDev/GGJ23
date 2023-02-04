@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Platform
-  m_Shader: {fileID: -6465566751694194690, guid: 631d0e2d87db9d94dac42af7db50bd85,
+  m_Shader: {fileID: -6465566751694194690, guid: 06df945d880818948ab01f3926e4c7b0,
     type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -21,6 +21,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _Gradient:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -40,5 +44,5 @@ Material:
     m_Ints: []
     m_Floats: []
     m_Colors:
-    - _Add: {r: 0.7830189, g: 0.7830189, b: 0.7830189, a: 1}
+    - _Add: {r: 0.18867922, g: 0.18867922, b: 0.18867922, a: 1}
   m_BuildTextureStacks: []

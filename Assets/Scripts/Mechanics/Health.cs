@@ -1,4 +1,5 @@
 using System;
+using GGJ.Core;
 using Platformer.Gameplay;
 using UnityEngine;
 using static Platformer.Core.Simulation;
@@ -20,8 +21,9 @@ namespace Platformer.Mechanics
         /// </summary>
         public bool IsAlive => currentHP > 0;
 
-        public int currentHP;
-        public int CurrentHP { get => currentHP; }
+        private int currentHP;
+        [SerializeField]
+        private FloatVariable HEALTH;
 
         /// <summary>
         /// Increment the HP of the entity.
@@ -29,6 +31,7 @@ namespace Platformer.Mechanics
         public void Increment()
         {
             currentHP = Mathf.Clamp(currentHP + 1, 0, maxHP);
+            HEALTH.SetValue((float)currentHP / maxHP);
         }
 
         /// <summary>
@@ -38,10 +41,10 @@ namespace Platformer.Mechanics
         public void Decrement()
         {
             currentHP = Mathf.Clamp(currentHP - 1, 0, maxHP);
+            HEALTH.SetValue((float)currentHP / maxHP);
             if (currentHP == 0)
             {
-                var ev = Schedule<HealthIsZero>();
-                ev.health = this;
+                State.LoseLevel();
             }
         }
 
@@ -56,6 +59,7 @@ namespace Platformer.Mechanics
         void Awake()
         {
             currentHP = maxHP;
+            HEALTH.SetValue((float)currentHP / maxHP);
         }
     }
 }
