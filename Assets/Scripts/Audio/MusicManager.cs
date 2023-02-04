@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MusicManager : MonoSingleton<MusicManager>
+public class MusicManager : SingletonPersistent<MusicManager>
 {
     [SerializeField] FeelMusic[] musicMapView;
     [SerializeField] private AudioSource musicSource;
