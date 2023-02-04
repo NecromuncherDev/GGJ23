@@ -156,9 +156,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8644d33345e77614ba3ace9c18398d0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  portal: {fileID: 3099449179065823231, guid: c11950306fb26674cb3f010dbc3ef184, type: 3}
   controller: {fileID: 114231493902538710}
   animator: {fileID: 9068004164416082368}
   runSpeed: 8
+  offset: {x: 0.4, y: 0.075, z: 0}
 --- !u!50 &50738830109512580
 Rigidbody2D:
   serializedVersion: 4
