@@ -1245,6 +1245,9 @@ MonoBehaviour:
   - 0.03
   - 0.08
   _amount: 0
+  _amountY: 0
+  _heightModifier: 0.25
+  _heightOffset: 0.5
   _follow: {fileID: 0}
 --- !u!1 &5523102886106187399
 GameObject:

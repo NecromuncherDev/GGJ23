@@ -30,10 +30,7 @@ public class AnimationStigger : MonoBehaviour
 
     private IEnumerator WaitAndTrigger(float waitTime)
     {
-        while (true)
-        {
-            yield return new WaitForSeconds(waitTime);
-            _animator.SetTrigger(_animationName);
-        }
+        yield return new WaitForSeconds(waitTime);
+        _animator.SetTrigger(_animationName);    
     }
 }
