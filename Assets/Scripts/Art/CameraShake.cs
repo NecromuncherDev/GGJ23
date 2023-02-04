@@ -29,7 +29,7 @@ public class CameraShake : MonoBehaviour
         }
         if (shakeTimer >= 0)
         {
-            shakeAmount *= 0.8f;
+            shakeAmount *= 0.7f;
             Vector2 shakePos = Random.insideUnitCircle * shakeAmount;
             transform.position = new Vector3(transform.position.x + (shakePos.x * 0.3f),
                 transform.position.y + shakePos.y,

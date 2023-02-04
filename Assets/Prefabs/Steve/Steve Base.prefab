@@ -1617,7 +1617,7 @@ PrefabInstance:
     - target: {fileID: 487878835920489472, guid: 907142c301d8aa24c8db32bbb4c0948a,
         type: 3}
       propertyPath: shakeAmount
-      value: 0.3
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 487878835920489473, guid: 907142c301d8aa24c8db32bbb4c0948a,
         type: 3}
