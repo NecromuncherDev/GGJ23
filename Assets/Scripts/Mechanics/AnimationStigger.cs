@@ -18,12 +18,12 @@ public class AnimationStigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        Debug.Log($"Trigger enter {collider.gameObject.name}");
+        //Debug.Log($"Trigger enter {collider.gameObject.name}");
 
         if (collider.gameObject.tag == "Player" && Time.time - lastCollision > throttlingInterval)
         {
             lastCollision = Time.time;
-            IEnumerator coroutine = WaitAndTrigger(2.0f);
+            IEnumerator coroutine = WaitAndTrigger(_deley);
             StartCoroutine(coroutine);
         }
     }

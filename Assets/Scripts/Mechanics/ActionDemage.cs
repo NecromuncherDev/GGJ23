@@ -21,13 +21,13 @@ public class ActionDemage: MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        Debug.Log($"Trigger enter {collider.gameObject.name}");
+        //Debug.Log($"Trigger enter {collider.gameObject.name}");
         if (damageBy.Equals(collider))
         {
-            Debug.Log("Demage enter");
+            //Debug.Log("Demage enter");
             if (player != null && Time.time - lastCollision > throttlingInterval)
             {
-                Debug.Log("Do damage");
+                //Debug.Log("Do damage");
                 var playerHealth = player.GetComponent<Health>();
                 if (playerHealth != null)
                 {
@@ -38,7 +38,7 @@ public class ActionDemage: MonoBehaviour
         }
         else
         {
-            Debug.Log("Player enter");
+            //Debug.Log("Player enter");
             if (collider.gameObject.tag == "Player")
             {
                 player = collider.gameObject;
