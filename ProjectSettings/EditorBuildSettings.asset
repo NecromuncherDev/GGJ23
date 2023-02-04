@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FinalScene.unity
     guid: 6d262bb52d76aa445abeed06a54e57d4
+  - enabled: 1
+    path: Assets/Scenes/L1 - Earth Golem/L1-1-EarthGolem.unity
+    guid: 1b51e41551b84404ea5e2584291202a8
   m_configObjects: {}

@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   model:
     virtualCamera: {fileID: 0}
-    player: {fileID: 0}
+    playerHealth: {fileID: 0}
     uiLevel: {fileID: 0}
     spawnPoint: {fileID: 0}
     jumpModifier: 0.9
@@ -66,4 +66,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainMenu: {fileID: 0}
   gamePlayCanvasii: []
-  gameController: {fileID: 9068114595538960699}
