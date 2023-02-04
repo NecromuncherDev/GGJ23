@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using GGJ.Core;
 using Platformer.Gameplay;
 using UnityEngine;
@@ -25,6 +26,8 @@ namespace Platformer.Mechanics
         [SerializeField]
         private FloatVariable HEALTH;
 
+        private SpriteRenderer cachedSpriteRenderer;
+
         /// <summary>
         /// Increment the HP of the entity.
         /// </summary>
@@ -40,6 +43,8 @@ namespace Platformer.Mechanics
         /// </summary>
         public void Decrement()
         {
+            StartCoroutine(DamageFlicker());
+
             currentHP = Mathf.Clamp(currentHP - 1, 0, maxHP);
             HEALTH.SetValue((float)currentHP / maxHP);
             if (currentHP == 0)
@@ -56,10 +61,20 @@ namespace Platformer.Mechanics
             while (currentHP > 0) Decrement();
         }
 
-        void Awake()
+        private void Awake()
         {
             currentHP = maxHP;
             HEALTH.SetValue((float)currentHP / maxHP);
+
+            cachedSpriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        }
+
+        // Coroutine for damage flicker
+        private IEnumerator DamageFlicker()
+        {
+            cachedSpriteRenderer.color = Color.red;
+            yield return new WaitForSeconds(0.2f);
+            cachedSpriteRenderer.color = Color.white;
         }
     }
 }
