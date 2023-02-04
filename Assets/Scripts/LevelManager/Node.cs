@@ -8,6 +8,7 @@ namespace GGJ.Core
     public class Node : MonoBehaviour
     {
         public Node[] nextNodes;
+        public string sceneName;
 
         [Header("Edges")]
         public SpriteRenderer edge;
