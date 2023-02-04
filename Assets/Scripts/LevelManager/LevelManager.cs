@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -14,13 +16,13 @@ namespace GGJ.Core
     public class LevelManager : MonoBehaviour
     {
         public Transform player;
-
         public Level[] layers;
 
-        private void Awake()
+        private async void Awake()
         {
             if (CheckWinGame())
             {
+                await moveEndingCamera(new Vector3(-2.25f, 3f, -10f), 3);
                 State.WinGame();
                 return;
             }
@@ -36,6 +38,7 @@ namespace GGJ.Core
         {
             InitPlayerPosition();
             UpdateNodesView();
+            InitCameraPosition();
         }
 
         private void Update()
@@ -98,6 +101,23 @@ namespace GGJ.Core
             var level = layers[State.CurrentLevelIndex.LayerIndex];
             var node = level.nodes[State.CurrentLevelIndex.NodeIndex];
             player.position = node.transform.position;
+        }
+
+        private void InitCameraPosition()
+        {
+            switch (State.CurrentLayerIndex)
+            {
+                case 0:
+                    Camera.main.transform.position = new Vector3(-2.25f, -6.5f, -10f);
+                    break;
+                case 1:
+                    Camera.main.transform.position = new Vector3(-2.25f, -3.5f, -10f);
+                    break;
+                case 2:
+                    Camera.main.transform.position = new Vector3(-2.25f, -1.5f, -10f);
+                    break;
+
+            }
         }
 
         private void UpdateNodesView()
@@ -165,6 +185,20 @@ namespace GGJ.Core
         private bool CheckWinGame()
         {
             return State.CurrentLayerIndex >= layers.Length;
+        }
+
+        private async Task moveEndingCamera(Vector3 targetPosition, float duration)
+        {
+            float time = 0;
+            Vector3 startPosition = Camera.main.transform.position;
+            while (time < duration)
+            {
+                transform.position = Vector3.Lerp(startPosition, targetPosition, time / duration);
+                time += Time.deltaTime;
+                await Task.Yield();
+            }
+            Camera.main.transform.position = targetPosition;
+
         }
 
         private bool CheckLoseGame()
