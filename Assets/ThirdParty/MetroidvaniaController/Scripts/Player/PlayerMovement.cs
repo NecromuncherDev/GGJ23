@@ -63,7 +63,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void InstantiatePortal()
     {
-        var instance = Instantiate(portal, transform.position + (transform.localScale.x * offset), Quaternion.identity);
+        Vector3 reOffset = offset;
+        reOffset.x = transform.localScale.x * offset.x;
+        var instance = Instantiate(portal, transform.position + reOffset, Quaternion.identity);
         Debug.Log(instance.transform.position);
         portalActive = true;
     }

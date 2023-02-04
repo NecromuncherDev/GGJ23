@@ -1012,14 +1012,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2119902725, guid: 04e7b7d5ca279e540ac6baac761c3108, type: 3}
-      propertyPath: m_RefResolutionX
-      value: 256
-      objectReference: {fileID: 0}
-    - target: {fileID: 2119902725, guid: 04e7b7d5ca279e540ac6baac761c3108, type: 3}
-      propertyPath: m_RefResolutionY
-      value: 256
-      objectReference: {fileID: 0}
     - target: {fileID: 3174560189434927200, guid: 04e7b7d5ca279e540ac6baac761c3108,
         type: 3}
       propertyPath: m_RootOrder
