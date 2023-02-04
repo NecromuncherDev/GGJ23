@@ -25,5 +25,11 @@ namespace Platformer.UI
         {
             SetActivePanel(0);
         }
+
+        public void OnQuit()
+        {
+            Debug.Log("Application.Quit...");
+            Application.Quit();
+        }
     }
 }

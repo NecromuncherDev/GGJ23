@@ -10,6 +10,7 @@ public class UIBGAudioSlider : MonoBehaviour
     [Space]
     [Header("Audio")]
     [SerializeField] private AudioMixer _audioMixer;
+    [SerializeField] private string _audioGroup;
     private Slider _slider;
 
     // Start is called before the first frame update
@@ -26,6 +27,6 @@ public class UIBGAudioSlider : MonoBehaviour
 
     public void AdjustMusicVolumn()
     {
-        _audioMixer.SetFloat("BG_Music", _slider.value);
+        _audioMixer.SetFloat(_audioGroup, _slider.value);
     }
 }
