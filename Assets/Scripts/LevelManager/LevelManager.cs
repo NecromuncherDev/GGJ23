@@ -55,7 +55,7 @@ namespace GGJ.Core
                 player.position = node.transform.position;
                 State.MarkVisited(levelIndex);
 
-                SceneManager.LoadScene("WinLoseTemp");
+                SceneManager.LoadScene("L1-1-EarthGolem");
             }
         }
 

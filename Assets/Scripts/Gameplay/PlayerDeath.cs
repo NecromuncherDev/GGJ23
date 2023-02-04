@@ -17,10 +17,10 @@ namespace Platformer.Gameplay
 
         public override void Execute()
         {
-            var player = model.player;
-            if (player.health.IsAlive)
+            var playerHealth = model.playerHealth;
+            if (playerHealth.IsAlive)
             {
-                player.health.Die();
+                playerHealth.Die();
             }
             State.LoseLevel();
         }

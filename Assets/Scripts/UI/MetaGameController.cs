@@ -20,11 +20,6 @@ namespace Platformer.UI
         /// </summary>
         public Canvas[] gamePlayCanvasii;
 
-        /// <summary>
-        /// The game controller.
-        /// </summary>
-        public GameController gameController;
-
         bool showMainCanvas = false;
 
         void OnEnable()

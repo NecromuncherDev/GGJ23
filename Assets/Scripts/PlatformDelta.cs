@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlatformDelta : MonoBehaviour
 {
+    [HideInInspector]
     public Vector3 delta = Vector3.zero;
     private Vector3 prevPosition = Vector3.zero;
 
