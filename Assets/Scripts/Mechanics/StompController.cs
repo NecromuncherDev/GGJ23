@@ -9,12 +9,12 @@ public class StompController : MonoBehaviour
     float lastCollision = 0;
     void OnTriggerEnter2D(Collider2D collider)
     {
-        var player = collider.gameObject.GetComponent<PlayerController>();
-        if (player != null && Time.time - lastCollision > throttlingInterval)
+        var playerHealth = collider.gameObject.GetComponent<Health>();
+        if (playerHealth != null && Time.time - lastCollision > throttlingInterval)
         {
             lastCollision = Time.time;
             var ev = Schedule<PlayerStompCollision>();
-            ev.player = player;
+            ev.playerHealth = playerHealth;
         }
     }
 }
