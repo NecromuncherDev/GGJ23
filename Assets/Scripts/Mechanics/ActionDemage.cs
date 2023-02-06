@@ -1,12 +1,11 @@
-﻿using static Platformer.Core.Simulation;
-using Platformer.Mechanics;
+﻿using Platformer.Mechanics;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider2D))]
 public class ActionDemage: MonoBehaviour
 {
     [SerializeField] private Collider2D damageBy;
-    float throttlingInterval = 2;
+    [SerializeField] private float _throttlingInterval = 2;
     float lastCollision = 0;
     GameObject player;
 
@@ -25,7 +24,7 @@ public class ActionDemage: MonoBehaviour
         if (damageBy.Equals(collider))
         {
             //Debug.Log("Demage enter");
-            if (player != null && Time.time - lastCollision > throttlingInterval)
+            if (player != null && Time.time - lastCollision > _throttlingInterval)
             {
                 //Debug.Log("Do damage");
                 var playerHealth = player.GetComponent<Health>();
